@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #3a4a6d;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.turn-indicator {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 1.5rem;
+    border: 2px solid #3a4a6d;
+    background-color: #3a4a6d;
+    gap: 2px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.cell {
+    aspect-ratio: 1/1;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Fredoka One', cursive;
+}
+
+.cell:hover {
+    background-color: #e9ecef;
+    transform: scale(1.03);
+}
+
+.cell.x {
+    color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    background-color: #3a4a6d;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #2c3a57;
+    transform: translateY(-2px);
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.score {
+    color: #3a4a6d;
+}
+
+.winning-cell {
+    background-color: #d4edda;
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 400px) {
+    .game-container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .cell {
+        font-size: 3rem;
+    }
+}
